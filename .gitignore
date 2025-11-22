@@ -16,7 +16,7 @@ data/processed/*.csv
 data/processed/*.npy
 data/processed/*.json
 
-!data/rac/.gitkeep
+!data/raw/.gitkeep
 !data/processed/.gitkeep
 
 # models 
