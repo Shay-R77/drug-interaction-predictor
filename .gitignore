@@ -1,0 +1,37 @@
+venv/
+env/
+
+# python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# jupyter
+.ipynb_chekpoints/
+
+# data
+data/raw/*
+data/processed/*.csv
+data/processed/*.npy
+data/processed/*.json
+
+!data/rac/.gitkeep
+!data/processed/.gitkeep
+
+# models 
+models/*.pkl
+models/*.joblib
+models/*.h5
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+.env
