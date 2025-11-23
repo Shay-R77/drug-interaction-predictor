@@ -2,7 +2,7 @@
 
 ## Overview
 
-Developing a classification model to predict potentional adverise interactions between medications. Using their molecular structure and chemical properties, this system can analyze these pairings to predict whther or not they will have any adverse effects.
+Developing a classification model to predict potentional adverse interactions between medications. Using their molecular structure and chemical properties, this system can analyze these pairings to predict whether or not they will have any adverse effects on a patient.
 
 ## Tech Stack
 
