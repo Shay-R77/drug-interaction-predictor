@@ -6,15 +6,12 @@ import json
 from tqdm import tqdm
 
 def convert_to_features(smiles):
-    '''
-    smiles to molecular features
-    '''
 
     # no smiles value
     if pd.isna(smiles) or smiles is None:
         return None, None
     
-    # convert from smiles to Mol
+    # convert from smiles to mol
     mol = Chem.MolFromSmiles(smiles)
     if mol is None:
         return None, None
@@ -59,7 +56,7 @@ def main():
     with open('data/processed/drug_info.json', 'r') as file:
         drug_info = json.load(file)
 
-    data = pd.read_csv('data/processed/data_binary.csv')
+    data = pd.read_csv('data/processed/interactions_with_negatives.csv')
 
     feature_rows = []
     fingerprint_rows = []
@@ -102,11 +99,11 @@ def main():
     print(f"\nSuccessfully processed: {len(feature_rows)} pairs")
     print(f"Skipped: {skipped_pairs} pairs (missing data)")
 
-    # Create final datasets
+    # final datasets
     feature_df = pd.DataFrame(feature_rows)
     fingerprint_array = np.array(fingerprint_rows)
 
-    # Save processed data
+    # save
     feature_df.to_csv('data/processed/features.csv', index=False)
     np.save('data/processed/fingerprints.npy', fingerprint_array)
 
